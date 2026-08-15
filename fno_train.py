@@ -1,39 +1,3 @@
-"""FNO training for the Cahn-Hilliard equation.
-
-    python fno_train.py
-
-Everything is configured in the CONFIG block below -- no command-line flags.
-Reads the advisor's `test.npz` directly; writes `fno_ch.pt` (best model),
-`fno_ch_last.pt` (resumable checkpoint) and `fno_ch_history.json`.
-
-fno_predict.py imports the solver and the model from this file, so keep the
-two together in the same directory.
-
-------------------------------------------------------------------------------
-Why this differs from the previous pipeline
-------------------------------------------------------------------------------
-1. Resolution-consistent spectral weights.  ch.py pins dx = 1, so testing at
-   l = 128 means a box of four times the *area* at the same lattice spacing --
-   not a refined mesh.  A stock FNO indexes its Fourier multiplier by integer
-   mode number j, but mode j *is* the wavenumber k = 2*pi*j/(N*dx), so weights
-   trained at N = 64 land on half the wavenumber they were fitted for, and the
-   mode cutoff halves k_max as well.  Measured on the old checkpoint: 608
-   rollout steps at l = 64, but only 7 at l = 128.  Here the multiplier lives
-   on a grid of physical wavenumbers and is resampled per lattice.
-
-2. Rollout (pushforward) training.  A model fitted only on (psi_t -> psi_t+1)
-   pairs never sees its own output as input, so 1900 autoregressive steps
-   compound error without limit.  Each batch is unrolled several steps with the
-   earlier ones detached (Brandstetter et al., ICLR 2022).
-
-3. Hard mass conservation.  The network predicts an increment and the
-   increment's mean is projected out, so d/dt integral(psi) = 0 holds to
-   machine precision instead of being requested by a penalty.
-
-4. Selection on the metric the advisor set -- how long the l = 128 rollout
-   holds R2 >= 0.80 -- not the one-step validation loss.
-"""
-
 from __future__ import annotations
 
 import contextlib
@@ -220,20 +184,10 @@ def ch_ground_truth(l, seed, off=0.0, t_end=2000.0, dt_step=DT_STEP,
 
 
 # ==========================================================================
-# Data -- the advisor's test.npz
+# Data -- test.npz
 # ==========================================================================
 
 def load_trajectories(path=DATASET, verbose=True):
-    """Read test.npz as frame *sequences*.
-
-    ch.py writes four float64 arrays totalling ~4.9 GB, but they are half
-    redundant: with n_ahead = 100 and gap = 10, ``y[s]`` is literally
-    ``X[s + 10]``.  So only the X arrays are read (and cast to float32, halving
-    them again), and the label identity is verified on the small val split
-    rather than assumed -- multi-step training depends on it.
-
-    Returns (train, val) float32 arrays of shape (n_traj, n_frames, l, l).
-    """
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"'{path}' not found. Run the advisor's ch.py first; it writes "
@@ -286,22 +240,6 @@ def _detect_stride(x, y, max_stride=64):
 
 
 class WindowSampler:
-    """Batches of ``n_steps + 1`` frames spaced one model step apart.
-
-    The whole training set is 0.98 GB in float32, so on a 40 GB A100 it is
-    parked in VRAM and sampled there: no DataLoader, no worker processes, no
-    host-to-device copy per step.  It falls back to host memory otherwise, with
-    the same indexing code.
-
-    Augmentation uses only exact symmetries, and only the ones the architecture
-    does not already have.  Translations are omitted deliberately: the model is
-    built from spectral convolutions, circular convolutions and pointwise ops,
-    so it is *exactly* translation-equivariant and translating the input
-    teaches it nothing.  What remains is D4 (the 5-point stencil is
-    D4-symmetric) and psi -> -psi (psi^3 - psi - lap(psi) is odd, and ch.py's
-    off-values are symmetric about zero, so the ensemble is closed under it).
-    """
-
     def __init__(self, frames, device, data_device, n_steps=1, augment=True,
                  seed=0):
         self.data = torch.from_numpy(frames).to(data_device)
@@ -552,9 +490,6 @@ class CahnHilliardFNO(nn.Module):
         return psi + (delta - delta.mean(dim=(-2, -1), keepdim=True))
 
     def smoothness_penalty(self):
-        # isinstance rather than blocks[i].spectral: it finds every spectral
-        # conv regardless of nesting, and narrows the type so editors do not
-        # flag the call on nn.ModuleList's Module-typed elements
         terms = [m.smoothness_penalty() for m in self.modules()
                  if isinstance(m, SpectralConv2d)]
         return torch.stack(terms).mean()
@@ -569,7 +504,6 @@ def save_model(model, path, **extra):
 
 
 def load_checkpoint(path, device="cpu"):
-    """Rebuild the model from a checkpoint written by save_model."""
     ckpt = torch.load(path, map_location=device, weights_only=False)
     if "config" not in ckpt:
         raise ValueError(f"{path} has no 'config' entry -- not a checkpoint "
