@@ -1,0 +1,14 @@
+training_curves.png
+  training curves of train_t0500_lap_c45m24 against epoch, three panels
+    sharing the epoch axis: (a) training loss and one-step validation loss,
+    (b) rollout score and in-range R2 of the validation rollouts, (c) survival
+    time with its range over the validation seeds
+  24,952,067 parameters
+  selected epoch 80 of 80: rollout score 0.991, in-range R2 0.997, survives to
+    t = 10000
+  in-range R2 covers t <= 1000
+  survival time: the time R2 first falls below 0.80
+  dotted vertical lines: the unroll depth steps up at epoch 7 (unroll 2),
+    epoch 16 (unroll 4)
+  training loss uses k unrolled steps; the vertical line and dots mark the
+    selected epoch

@@ -1,0 +1,395 @@
+composition_all.png
+  material A content c_A = 100 (1 + psi)/2 (%) against time on a log t axis,
+    Solver solid and FNO dashed, one colour per composition; conservation
+    makes each line flat at 100 (1 + psi0)/2
+  mean over 50 seeds
+  psi0 = -0.4: c_A = 30.00 % at t = 100; at the end Solver 30.00 % at t =
+    10000, FNO 30.00 % at t = 10000
+  psi0 = -0.2: c_A = 40.00 % at t = 100; at the end Solver 40.00 % at t =
+    10000, FNO 40.00 % at t = 10000
+  psi0 = +0.0: c_A = 50.00 % at t = 100; at the end Solver 50.00 % at t =
+    10000, FNO 50.00 % at t = 10000
+  psi0 = +0.2: c_A = 60.00 % at t = 100; at the end Solver 60.00 % at t =
+    10000, FNO 60.00 % at t = 10000
+  psi0 = +0.4: c_A = 70.00 % at t = 100; at the end Solver 70.00 % at t =
+    10000, FNO 70.00 % at t = 10000
+
+composition_psi0m0.20.png
+  departure of the mean order parameter from its start, <psi>(t) - psi0,
+    Solver dashed and FNO solid, seed mean +- 1 sd of 50 seeds, log t axis
+  case: psi0 = -0.2, l = 256
+  material A content c_A = 50 (1 + psi) %: 40.00 % at t = 100, Solver 40.00 %
+    and FNO 40.00 % at t = 10000
+  largest departure of the seed mean: Solver 2.9e-11, FNO 1.4e-07
+
+composition_psi0m0.40.png
+  departure of the mean order parameter from its start, <psi>(t) - psi0,
+    Solver dashed and FNO solid, seed mean +- 1 sd of 50 seeds, log t axis
+  case: psi0 = -0.4, l = 256
+  material A content c_A = 50 (1 + psi) %: 30.00 % at t = 100, Solver 30.00 %
+    and FNO 30.00 % at t = 10000
+  largest departure of the seed mean: Solver 2.8e-11, FNO 6.0e-08
+
+composition_psi0p0.00.png
+  departure of the mean order parameter from its start, <psi>(t) - psi0,
+    Solver dashed and FNO solid, seed mean +- 1 sd of 50 seeds, log t axis
+  case: psi0 = +0.0, l = 256
+  material A content c_A = 50 (1 + psi) %: 50.00 % at t = 100, Solver 50.00 %
+    and FNO 50.00 % at t = 10000
+  largest departure of the seed mean: Solver 2.9e-11, FNO 6.7e-08
+
+composition_psi0p0.20.png
+  departure of the mean order parameter from its start, <psi>(t) - psi0,
+    Solver dashed and FNO solid, seed mean +- 1 sd of 50 seeds, log t axis
+  case: psi0 = +0.2, l = 256
+  material A content c_A = 50 (1 + psi) %: 60.00 % at t = 100, Solver 60.00 %
+    and FNO 60.00 % at t = 10000
+  largest departure of the seed mean: Solver 2.9e-11, FNO 6.2e-08
+
+composition_psi0p0.40.png
+  departure of the mean order parameter from its start, <psi>(t) - psi0,
+    Solver dashed and FNO solid, seed mean +- 1 sd of 50 seeds, log t axis
+  case: psi0 = +0.4, l = 256
+  material A content c_A = 50 (1 + psi) %: 70.00 % at t = 100, Solver 70.00 %
+    and FNO 70.00 % at t = 10000
+  largest departure of the seed mean: Solver 2.6e-11, FNO 7.3e-08
+
+domain_growth_psi0m0.20.png
+  domain size against time on log-log axes: the half-maximum length L_half of
+    C(r,t), Solver and FNO, mean +- 1 sd over 50 seeds; the dashed black line
+    is t^(1/3) (Lifshitz-Slyozov), anchored to the Solver curve
+  case: psi0 = -0.2, l = 256
+  late exponent, t = 2500-10000: n = 0.228 Solver, 0.727 FNO
+  training window, t = 148-1000: n = 0.247 Solver, 0.252 FNO
+  dashed vertical line: training horizon t = 1000
+  first zero of C(r,t), L_zero (drawn in the kinetics figure): n = 0.275
+    Solver, 0.726 FNO over t = 148-10000
+  L_zero, seed mean: t = 1000: 10.42 Solver, 10.55 FNO; t = 10000: 19.60
+    Solver, 57.52 FNO
+
+domain_growth_psi0m0.40.png
+  domain size against time on log-log axes: the half-maximum length L_half of
+    C(r,t), Solver and FNO, mean +- 1 sd over 50 seeds; the dashed black line
+    is t^(1/3) (Lifshitz-Slyozov), anchored to the Solver curve
+  case: psi0 = -0.4, l = 256
+  late exponent, t = 2500-10000: n = 0.278 Solver, 0.665 FNO
+  training window, t = 108-1000: n = 0.218 Solver, 0.219 FNO
+  dashed vertical line: training horizon t = 1000
+  first zero of C(r,t), L_zero (drawn in the kinetics figure): n = 0.292
+    Solver, 0.659 FNO over t = 108-10000
+  L_zero, seed mean: t = 1000: 9.17 Solver, 9.24 FNO; t = 10000: 18.32 Solver,
+    56.81 FNO
+
+domain_growth_psi0p0.00.png
+  domain size against time on log-log axes: the half-maximum length L_half of
+    C(r,t), Solver and FNO, mean +- 1 sd over 50 seeds; the dashed black line
+    is t^(1/3) (Lifshitz-Slyozov), anchored to the Solver curve
+  case: psi0 = +0.0, l = 256
+  late exponent, t = 2500-10000: n = 0.323 Solver, 0.591 FNO
+  training window, t = 108-1000: n = 0.285 Solver, 0.295 FNO
+  dashed vertical line: training horizon t = 1000
+  first zero of C(r,t), L_zero (drawn in the kinetics figure): n = 0.347
+    Solver, 0.655 FNO over t = 108-10000
+  L_zero, seed mean: t = 1000: 11.39 Solver, 11.73 FNO; t = 10000: 25.72
+    Solver, 59.76 FNO
+
+domain_growth_psi0p0.20.png
+  domain size against time on log-log axes: the half-maximum length L_half of
+    C(r,t), Solver and FNO, mean +- 1 sd over 50 seeds; the dashed black line
+    is t^(1/3) (Lifshitz-Slyozov), anchored to the Solver curve
+  case: psi0 = +0.2, l = 256
+  late exponent, t = 2500-10000: n = 0.232 Solver, 0.679 FNO
+  training window, t = 108-1000: n = 0.250 Solver, 0.252 FNO
+  dashed vertical line: training horizon t = 1000
+  first zero of C(r,t), L_zero (drawn in the kinetics figure): n = 0.278
+    Solver, 0.678 FNO over t = 108-10000
+  L_zero, seed mean: t = 1000: 10.43 Solver, 10.59 FNO; t = 10000: 19.60
+    Solver, 59.20 FNO
+
+domain_growth_psi0p0.40.png
+  domain size against time on log-log axes: the half-maximum length L_half of
+    C(r,t), Solver and FNO, mean +- 1 sd over 50 seeds; the dashed black line
+    is t^(1/3) (Lifshitz-Slyozov), anchored to the Solver curve
+  case: psi0 = +0.4, l = 256
+  late exponent, t = 2500-10000: n = 0.278 Solver, 0.586 FNO
+  training window, t = 108-1000: n = 0.215 Solver, 0.217 FNO
+  dashed vertical line: training horizon t = 1000
+  first zero of C(r,t), L_zero (drawn in the kinetics figure): n = 0.292
+    Solver, 0.615 FNO over t = 108-10000
+  L_zero, seed mean: t = 1000: 9.13 Solver, 9.22 FNO; t = 10000: 18.32 Solver,
+    52.20 FNO
+
+free_energy_psi0m0.20.png
+  free energy per site <f> against t (log axis), Solver dashed and FNO solid,
+    mean over 50 seeds
+  case: psi0 = -0.2, l = 256
+  FNO monotone: 50 of 50 seeds (the FNO free energy never rises,
+    np.all(np.diff(energy_pred) <= 1e-9))
+  <f> at t = 148: Solver 0.12601, FNO 0.12702; at t = 10000: Solver 0.04176,
+    FNO 0.02235
+  dashed vertical line: training horizon t = 1000
+
+free_energy_psi0m0.40.png
+  free energy per site <f> against t (log axis), Solver dashed and FNO solid,
+    mean over 50 seeds
+  case: psi0 = -0.4, l = 256
+  FNO monotone: 50 of 50 seeds (the FNO free energy never rises,
+    np.all(np.diff(energy_pred) <= 1e-9))
+  <f> at t = 108: Solver 0.12098, FNO 0.12100; at t = 10000: Solver 0.03788,
+    FNO 0.02309
+  dashed vertical line: training horizon t = 1000
+
+free_energy_psi0p0.00.png
+  free energy per site <f> against t (log axis), Solver dashed and FNO solid,
+    mean over 50 seeds
+  case: psi0 = +0.0, l = 256
+  FNO monotone: 50 of 50 seeds (the FNO free energy never rises,
+    np.all(np.diff(energy_pred) <= 1e-9))
+  <f> at t = 108: Solver 0.13828, FNO 0.13830; at t = 10000: Solver 0.03137,
+    FNO 0.01955
+  dashed vertical line: training horizon t = 1000
+
+free_energy_psi0p0.20.png
+  free energy per site <f> against t (log axis), Solver dashed and FNO solid,
+    mean over 50 seeds
+  case: psi0 = +0.2, l = 256
+  FNO monotone: 50 of 50 seeds (the FNO free energy never rises,
+    np.all(np.diff(energy_pred) <= 1e-9))
+  <f> at t = 108: Solver 0.13766, FNO 0.13770; at t = 10000: Solver 0.04159,
+    FNO 0.02376
+  dashed vertical line: training horizon t = 1000
+
+free_energy_psi0p0.40.png
+  free energy per site <f> against t (log axis), Solver dashed and FNO solid,
+    mean over 50 seeds
+  case: psi0 = +0.4, l = 256
+  FNO monotone: 50 of 50 seeds (the FNO free energy never rises,
+    np.all(np.diff(energy_pred) <= 1e-9))
+  <f> at t = 108: Solver 0.12091, FNO 0.12092; at t = 10000: Solver 0.03791,
+    FNO 0.02507
+  dashed vertical line: training horizon t = 1000
+
+phase_ordering_kinetics_psi0m0.20.png
+  phase-ordering kinetics of one case, lattice 256, mean over 50 seeds, psi0 =
+    -0.20; solid: Solver, dashed: FNO in (b) to (d)
+  (a) domain size L(t) (L_zero, the first zero of C(r,t)) on log-log axes,
+    mean +- 1 sd over the seeds; growth exponent over the whole rollout:
+    Solver n = 0.275, FNO n = 0.726; dotted line: t^(1/3) (Lifshitz-Slyozov),
+    anchored at the geometric-mean time; training horizon t = 1000
+  (b) structure factor S(k,t) at t = 100, 500, 1000, 2000, 4000, 5000, 6000,
+    8000, 10000; dotted line: Porod k^-3 over k = 0.20-0.49
+  (c) dynamical scaling S = L^d f(kL), Puri Eq. 1.90, same times as (b)
+  (d) scaling function C = g(r/L), Puri Eq. 1.88, same times as (b)
+  (e) free energy per site <f>, seed mean; FNO monotone (never rises, np.diff
+    <= 1e-9): yes
+  (f) mean order parameter <psi>(t), seed mean; initial mean = -0.2000;
+    composition at t = 10000: Solver A 40.00 / B 60.00 %, FNO A 40.00 / B
+    60.00 %
+
+phase_ordering_kinetics_psi0m0.40.png
+  phase-ordering kinetics of one case, lattice 256, mean over 50 seeds, psi0 =
+    -0.40; solid: Solver, dashed: FNO in (b) to (d)
+  (a) domain size L(t) (L_zero, the first zero of C(r,t)) on log-log axes,
+    mean +- 1 sd over the seeds; growth exponent over the whole rollout:
+    Solver n = 0.292, FNO n = 0.659; dotted line: t^(1/3) (Lifshitz-Slyozov),
+    anchored at the geometric-mean time; training horizon t = 1000
+  (b) structure factor S(k,t) at t = 100, 500, 1000, 2000, 4000, 5000, 6000,
+    8000, 10000; dotted line: Porod k^-3 over k = 0.25-0.61
+  (c) dynamical scaling S = L^d f(kL), Puri Eq. 1.90, same times as (b)
+  (d) scaling function C = g(r/L), Puri Eq. 1.88, same times as (b)
+  (e) free energy per site <f>, seed mean; FNO monotone (never rises, np.diff
+    <= 1e-9): yes
+  (f) mean order parameter <psi>(t), seed mean; initial mean = -0.4000;
+    composition at t = 10000: Solver A 30.00 / B 70.00 %, FNO A 30.00 / B
+    70.00 %
+
+phase_ordering_kinetics_psi0p0.00.png
+  phase-ordering kinetics of one case, lattice 256, mean over 50 seeds; solid:
+    Solver, dashed: FNO in (b) to (d)
+  (a) domain size L(t) (L_zero, the first zero of C(r,t)) on log-log axes,
+    mean +- 1 sd over the seeds; growth exponent over the whole rollout:
+    Solver n = 0.347, FNO n = 0.655; dotted line: t^(1/3) (Lifshitz-Slyozov),
+    anchored at the geometric-mean time; training horizon t = 1000
+  (b) structure factor S(k,t) at t = 100, 500, 1000, 2000, 4000, 5000, 6000,
+    8000, 10000; dotted line: Porod k^-3 over k = 0.15-0.37
+  (c) dynamical scaling S = L^d f(kL), Puri Eq. 1.90, same times as (b)
+  (d) scaling function C = g(r/L), Puri Eq. 1.88, same times as (b)
+  (e) free energy per site <f>, seed mean; FNO monotone (never rises, np.diff
+    <= 1e-9): yes
+  (f) mean order parameter <psi>(t), seed mean; initial mean = -0.0000;
+    composition at t = 10000: Solver A 50.00 / B 50.00 %, FNO A 50.00 / B
+    50.00 %
+
+phase_ordering_kinetics_psi0p0.20.png
+  phase-ordering kinetics of one case, lattice 256, mean over 50 seeds, psi0 =
+    +0.20; solid: Solver, dashed: FNO in (b) to (d)
+  (a) domain size L(t) (L_zero, the first zero of C(r,t)) on log-log axes,
+    mean +- 1 sd over the seeds; growth exponent over the whole rollout:
+    Solver n = 0.278, FNO n = 0.678; dotted line: t^(1/3) (Lifshitz-Slyozov),
+    anchored at the geometric-mean time; training horizon t = 1000
+  (b) structure factor S(k,t) at t = 100, 500, 1000, 2000, 4000, 5000, 6000,
+    8000, 10000; dotted line: Porod k^-3 over k = 0.25-0.61
+  (c) dynamical scaling S = L^d f(kL), Puri Eq. 1.90, same times as (b)
+  (d) scaling function C = g(r/L), Puri Eq. 1.88, same times as (b)
+  (e) free energy per site <f>, seed mean; FNO monotone (never rises, np.diff
+    <= 1e-9): yes
+  (f) mean order parameter <psi>(t), seed mean; initial mean = 0.2000;
+    composition at t = 10000: Solver A 60.00 / B 40.00 %, FNO A 60.00 / B
+    40.00 %
+
+phase_ordering_kinetics_psi0p0.40.png
+  phase-ordering kinetics of one case, lattice 256, mean over 50 seeds, psi0 =
+    +0.40; solid: Solver, dashed: FNO in (b) to (d)
+  (a) domain size L(t) (L_zero, the first zero of C(r,t)) on log-log axes,
+    mean +- 1 sd over the seeds; growth exponent over the whole rollout:
+    Solver n = 0.292, FNO n = 0.615; dotted line: t^(1/3) (Lifshitz-Slyozov),
+    anchored at the geometric-mean time; training horizon t = 1000
+  (b) structure factor S(k,t) at t = 100, 500, 1000, 2000, 4000, 5000, 6000,
+    8000, 10000; dotted line: Porod k^-3 over k = 0.25-0.61
+  (c) dynamical scaling S = L^d f(kL), Puri Eq. 1.90, same times as (b)
+  (d) scaling function C = g(r/L), Puri Eq. 1.88, same times as (b)
+  (e) free energy per site <f>, seed mean; FNO monotone (never rises, np.diff
+    <= 1e-9): yes
+  (f) mean order parameter <psi>(t), seed mean; initial mean = 0.4000;
+    composition at t = 10000: Solver A 70.00 / B 30.00 %, FNO A 70.00 / B
+    30.00 %
+
+psi_distribution_psi0m0.20.png
+  distribution P(psi) of the order parameter at t = 10000, Solver (filled) and
+    FNO (circles), log y axis; dotted lines at psi = -1 and +1
+  case: psi0 = -0.2, l = 256
+  50 of 50 seeds pooled (3,276,800 sites)
+  lever rule at psi0 = -0.2: 40.0 % A-rich / 60.0 % B-rich (A-rich: psi > 0)
+  measured: Solver 39.2 / 60.8 %, FNO 39.6 / 60.4 %
+
+psi_distribution_psi0m0.40.png
+  distribution P(psi) of the order parameter at t = 10000, Solver (filled) and
+    FNO (circles), log y axis; dotted lines at psi = -1 and +1
+  case: psi0 = -0.4, l = 256
+  50 of 50 seeds pooled (3,276,800 sites)
+  lever rule at psi0 = -0.4: 30.0 % A-rich / 70.0 % B-rich (A-rich: psi > 0)
+  measured: Solver 29.0 / 71.0 %, FNO 29.4 / 70.6 %
+
+psi_distribution_psi0p0.00.png
+  distribution P(psi) of the order parameter at t = 10000, Solver (filled) and
+    FNO (circles), log y axis; dotted lines at psi = -1 and +1
+  case: psi0 = +0.0, l = 256
+  50 of 50 seeds pooled (3,276,800 sites)
+  lever rule at psi0 = +0.0: 50.0 % A-rich / 50.0 % B-rich (A-rich: psi > 0)
+  measured: Solver 50.0 / 50.0 %, FNO 50.0 / 50.0 %
+
+psi_distribution_psi0p0.20.png
+  distribution P(psi) of the order parameter at t = 10000, Solver (filled) and
+    FNO (circles), log y axis; dotted lines at psi = -1 and +1
+  case: psi0 = +0.2, l = 256
+  50 of 50 seeds pooled (3,276,800 sites)
+  lever rule at psi0 = +0.2: 60.0 % A-rich / 40.0 % B-rich (A-rich: psi > 0)
+  measured: Solver 60.8 / 39.2 %, FNO 60.5 / 39.5 %
+
+psi_distribution_psi0p0.40.png
+  distribution P(psi) of the order parameter at t = 10000, Solver (filled) and
+    FNO (circles), log y axis; dotted lines at psi = -1 and +1
+  case: psi0 = +0.4, l = 256
+  50 of 50 seeds pooled (3,276,800 sites)
+  lever rule at psi0 = +0.4: 70.0 % A-rich / 30.0 % B-rich (A-rich: psi > 0)
+  measured: Solver 71.0 / 29.0 %, FNO 70.7 / 29.3 %
+
+r2_time.png
+  mean R2 against time, one line per composition at this box size, +-1 sd over
+    the seeds as a band, linear t axis
+  psi0 = -0.4 (50 seeds), mean R2 at t = 2000: 0.876, t = 5000: 0.453, t =
+    10000: -0.286
+  psi0 = -0.2 (50 seeds), mean R2 at t = 2000: 0.768, t = 5000: 0.249, t =
+    10000: -0.413
+  psi0 = +0.0 (50 seeds), mean R2 at t = 2000: 0.775, t = 5000: 0.334, t =
+    10000: 0.032
+  psi0 = +0.2 (50 seeds), mean R2 at t = 2000: 0.807, t = 5000: 0.297, t =
+    10000: -0.337
+  psi0 = +0.4 (50 seeds), mean R2 at t = 2000: 0.868, t = 5000: 0.482, t =
+    10000: -0.165
+  dotted line: training horizon t = 1000; bands: +-1 sd over the seeds
+
+snapshots_psi0m0.20.png
+  Solver, FNO and absolute error of one seed at each snapshot time (columns),
+    colour bars for psi and for the error
+  case: off-critical quench, psi0 = -0.2, 256 x 256 lattice sites, dx = 1
+  autoregressive rollout seeded at t = 100; the first column is the seed
+    frame, so its R2 = 1 by construction
+  seed shown: 67517, the best of 50 (highest mean R2 over the rollout among
+    those that did not diverge)
+  R2 of the shown seed at t = 100: 1.000, 500: 0.952, 1000: 0.878, 2000:
+    0.814, 5000: 0.422, 10000: -0.209
+  R2(10000) of the shown seed = -0.209; over the 50 seeds that reach t =
+    10000: median -0.404, worst -0.737
+  seeds diverged at t = 10000: 0 (scored at R2 = -1); diverged later: 0
+  by mean R2 over the rollout: best seed 67517 (0.407), median seed 85507
+    (0.273), worst seed 61803 (-0.016)
+  model: Cahn-Hilliard FNO
+
+snapshots_psi0m0.40.png
+  Solver, FNO and absolute error of one seed at each snapshot time (columns),
+    colour bars for psi and for the error
+  case: off-critical quench, psi0 = -0.4, 256 x 256 lattice sites, dx = 1
+  autoregressive rollout seeded at t = 100; the first column is the seed
+    frame, so its R2 = 1 by construction
+  seed shown: 77777, the best of 50 (highest mean R2 over the rollout among
+    those that did not diverge)
+  R2 of the shown seed at t = 100: 1.000, 500: 0.993, 1000: 0.966, 2000:
+    0.900, 5000: 0.582, 10000: 0.265
+  R2(10000) of the shown seed = 0.265; over the 50 seeds that reach t = 10000:
+    median -0.290, worst -0.630
+  seeds diverged at t = 10000: 0 (scored at R2 = -1); diverged later: 0
+  by mean R2 over the rollout: best seed 77777 (0.655), median seed 66260
+    (0.439), worst seed 43125 (0.232)
+  model: Cahn-Hilliard FNO
+
+snapshots_psi0p0.00.png
+  Solver, FNO and absolute error of one seed at each snapshot time (columns),
+    colour bars for psi and for the error
+  case: critical quench, psi0 = +0.0, 256 x 256 lattice sites, dx = 1
+  autoregressive rollout seeded at t = 100; the first column is the seed
+    frame, so its R2 = 1 by construction
+  seed shown: 98895, the best of 50 (highest mean R2 over the rollout among
+    those that did not diverge)
+  R2 of the shown seed at t = 100: 1.000, 500: 0.992, 1000: 0.966, 2000:
+    0.840, 5000: 0.585, 10000: 0.336
+  R2(10000) of the shown seed = 0.336; over the 50 seeds that reach t = 10000:
+    median 0.044, worst -0.339
+  seeds diverged at t = 10000: 0 (scored at R2 = -1); diverged later: 0
+  by mean R2 over the rollout: best seed 98895 (0.642), median seed 35064
+    (0.446), worst seed 70389 (0.270)
+  model: Cahn-Hilliard FNO
+
+snapshots_psi0p0.20.png
+  Solver, FNO and absolute error of one seed at each snapshot time (columns),
+    colour bars for psi and for the error
+  case: off-critical quench, psi0 = +0.2, 256 x 256 lattice sites, dx = 1
+  autoregressive rollout seeded at t = 100; the first column is the seed
+    frame, so its R2 = 1 by construction
+  seed shown: 33052, the best of 50 (highest mean R2 over the rollout among
+    those that did not diverge)
+  R2 of the shown seed at t = 100: 1.000, 500: 0.985, 1000: 0.957, 2000:
+    0.886, 5000: 0.579, 10000: 0.069
+  R2(10000) of the shown seed = 0.069; over the 50 seeds that reach t = 10000:
+    median -0.367, worst -0.582
+  seeds diverged at t = 10000: 0 (scored at R2 = -1); diverged later: 0
+  by mean R2 over the rollout: best seed 33052 (0.592), median seed 51170
+    (0.328), worst seed 67517 (0.139)
+  model: Cahn-Hilliard FNO
+
+snapshots_psi0p0.40.png
+  Solver, FNO and absolute error of one seed at each snapshot time (columns),
+    colour bars for psi and for the error
+  case: off-critical quench, psi0 = +0.4, 256 x 256 lattice sites, dx = 1
+  autoregressive rollout seeded at t = 100; the first column is the seed
+    frame, so its R2 = 1 by construction
+  seed shown: 94245, the best of 50 (highest mean R2 over the rollout among
+    those that did not diverge)
+  R2 of the shown seed at t = 100: 1.000, 500: 0.989, 1000: 0.965, 2000:
+    0.908, 5000: 0.597, 10000: 0.039
+  R2(10000) of the shown seed = 0.039; over the 50 seeds that reach t = 10000:
+    median -0.159, worst -0.457
+  seeds diverged at t = 10000: 0 (scored at R2 = -1); diverged later: 0
+  by mean R2 over the rollout: best seed 94245 (0.585), median seed 70389
+    (0.464), worst seed 32393 (0.329)
+  model: Cahn-Hilliard FNO

@@ -1,0 +1,17 @@
+l128.png
+  mean R2 against time t, linear t axis, the same t and R2 range in every
+    image of this folder; one image for each box size, one line for each
+    composition psi0 (psi0 = 0 heaviest); each line is the mean over the seeds
+    with a band of +-1 sd over the seeds; dotted line: training horizon t =
+    1000
+  l = 128
+  psi0 = -0.4 (50 seeds), mean R2 +- sd at t = 1000: 0.996 +- 0.005, t = 2000:
+    0.991 +- 0.016, t = 5000: 0.970 +- 0.041, t = 10000: 0.942 +- 0.084
+  psi0 = -0.2 (50 seeds), mean R2 +- sd at t = 1000: 0.982 +- 0.033, t = 2000:
+    0.965 +- 0.067, t = 5000: 0.925 +- 0.145, t = 10000: 0.888 +- 0.222
+  psi0 = +0.0 (50 seeds), mean R2 +- sd at t = 1000: 0.993 +- 0.017, t = 2000:
+    0.989 +- 0.034, t = 5000: 0.977 +- 0.077, t = 10000: 0.969 +- 0.098
+  psi0 = +0.2 (50 seeds), mean R2 +- sd at t = 1000: 0.977 +- 0.043, t = 2000:
+    0.951 +- 0.075, t = 5000: 0.912 +- 0.132, t = 10000: 0.868 +- 0.200
+  psi0 = +0.4 (50 seeds), mean R2 +- sd at t = 1000: 0.993 +- 0.012, t = 2000:
+    0.982 +- 0.028, t = 5000: 0.966 +- 0.044, t = 10000: 0.931 +- 0.108

@@ -1,0 +1,57 @@
+comparison_psi0m0.20.png
+  mean R2 against time of the off-critical quench, psi0 = -0.2, l = 256, one
+    curve for each run, log t axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.918
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.916
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = -0.413
+
+comparison_psi0m0.40.png
+  mean R2 against time of the off-critical quench, psi0 = -0.4, l = 256, one
+    curve for each run, log t axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.916
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.938
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = -0.286
+
+comparison_psi0p0.00.png
+  mean R2 against time of the critical quench, psi0 = +0.0, l = 256, one curve
+    for each run, log t axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0300_lap_pred_t10000: trained to t = 300, 50 seeds, R2(10000) = 0.962
+  train_t0300_pred_t10000: trained to t = 300, 50 seeds, R2(10000) = 0.234
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.971
+  train_t0500_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.087
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.974
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = 0.032
+
+comparison_psi0p0.20.png
+  mean R2 against time of the off-critical quench, psi0 = +0.2, l = 256, one
+    curve for each run, log t axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.890
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.900
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = -0.337
+
+comparison_psi0p0.40.png
+  mean R2 against time of the off-critical quench, psi0 = +0.4, l = 256, one
+    curve for each run, log t axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.909
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.941
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = -0.165

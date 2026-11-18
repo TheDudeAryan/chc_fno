@@ -1,0 +1,18 @@
+{
+  "pythonVersion": "3.11",
+  "exclude": [
+    "Archive",
+    "Old",
+    "archive",
+    "env",
+    ".venv",
+    "results_runs",
+    "gt_cache",
+    "logs",
+    "Work",
+    "Results",
+    "tests/_scratch",
+    "tests/fixtures",
+    "**/__pycache__"
+  ]
+}

@@ -1,0 +1,97 @@
+comparison.png
+  mean R2 against time of the critical quench, one curve for each run, log t
+    axis
+  colour: the horizon a run was trained to, with a dotted vertical line of
+    that colour; solid: Laplacian-output run, dashed: base model, dash-dot:
+    ablation
+  train_t0300_lap_pred_t10000: trained to t = 300, 50 seeds, R2(10000) = 0.948
+  train_t0300_pred_t10000: trained to t = 300, 50 seeds, R2(10000) = 0.420
+  train_t0500_lap_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.965
+  train_t0500_pred_t10000: trained to t = 500, 50 seeds, R2(10000) = 0.253
+  train_t1000_lap_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) =
+    0.950
+  train_t1000_pred_t10000: trained to t = 1000, 50 seeds, R2(10000) = 0.190
+
+comparison_t1000.png
+  mean R2 against time of the model sizes trained to t = 1000, pooled over the
+    6 cases (5 compositions, 1 box size), 50 seeds each, log t axis
+  colour: width in channels; black: the default size (38 channels, 24 modes);
+    dashed: another training seed; dotted line: training horizon t = 1000
+  24 Fourier modes
+  24 modes, 16 ch: 3.2M parameters, pooled R2(10000) = 0.928
+  24 modes, 24 ch: 7.1M parameters, pooled R2(10000) = 0.922
+  24 modes, 32 ch: 12.6M parameters, pooled R2(10000) = 0.929
+  24 modes, 38 ch (default): 17.8M parameters, pooled R2(10000) = 0.931
+  24 modes, 38 ch (default), seed 1: 17.8M parameters, pooled R2(10000) =
+    0.938
+  24 modes, 45 ch: 25.0M parameters, pooled R2(10000) = 0.933
+  24 modes, 64 ch: 50.4M parameters, pooled R2(10000) = 0.936
+
+comparison_t500.png
+  mean R2 against time of the model sizes trained to t = 500, pooled over the
+    15 cases (5 compositions, 10 box sizes), 50 seeds each, log t axis
+  colour: width in channels; black: the default size (38 channels, 24 modes);
+    dotted line: training horizon t = 500
+  24 Fourier modes
+  24 modes, 16 ch: 3.2M parameters, pooled R2(10000) = 0.893
+  24 modes, 24 ch: 7.1M parameters, pooled R2(10000) = 0.889
+  24 modes, 32 ch: 12.6M parameters, pooled R2(10000) = 0.932
+  24 modes, 38 ch (default): 17.8M parameters, pooled R2(10000) = 0.917
+  24 modes, 45 ch: 25.0M parameters, pooled R2(10000) = 0.926
+  24 modes, 64 ch: 50.4M parameters, pooled R2(10000) = 0.911
+
+end500_vs_end1000.png
+  R2 at t = 10000 against the box size l (log2 axis), one panel for each
+    composition (panels (a), (b), ... in the order of psi0, the composition in
+    each panel's corner); the model trained to t = 500
+    (train_t0500_lap_pred_t10000) and the one trained to t = 1000
+    (train_t1000_lap_pred_t10000) as two lines; points are the seed mean, bars
+    its standard error; only the sizes both runs have
+  psi0 = -0.4, trained to 500: l = 128: 0.908 +- 0.019 (50 seeds), l = 256:
+    0.916 +- 0.008 (50 seeds), l = 512: 0.926 +- 0.004 (50 seeds)
+  psi0 = -0.4, trained to 1000: l = 128: 0.957 +- 0.009 (50 seeds), l = 256:
+    0.938 +- 0.008 (50 seeds), l = 512: 0.953 +- 0.004 (50 seeds)
+  psi0 = -0.2, trained to 500: l = 128: 0.883 +- 0.027 (50 seeds), l = 256:
+    0.918 +- 0.011 (50 seeds), l = 512: 0.923 +- 0.005 (50 seeds)
+  psi0 = -0.2, trained to 1000: l = 128: 0.906 +- 0.030 (50 seeds), l = 256:
+    0.916 +- 0.011 (50 seeds), l = 512: 0.920 +- 0.005 (50 seeds)
+  psi0 = +0.0, trained to 500: l = 128: 0.965 +- 0.013 (50 seeds), l = 256:
+    0.971 +- 0.006 (50 seeds), l = 512: 0.969 +- 0.004 (50 seeds)
+  psi0 = +0.0, trained to 1000: l = 128: 0.950 +- 0.017 (50 seeds), l = 256:
+    0.974 +- 0.006 (50 seeds), l = 512: 0.965 +- 0.004 (50 seeds)
+  psi0 = +0.2, trained to 500: l = 128: 0.854 +- 0.026 (50 seeds), l = 256:
+    0.890 +- 0.013 (50 seeds), l = 512: 0.889 +- 0.008 (50 seeds)
+  psi0 = +0.2, trained to 1000: l = 128: 0.853 +- 0.031 (50 seeds), l = 256:
+    0.900 +- 0.013 (50 seeds), l = 512: 0.900 +- 0.007 (50 seeds)
+  psi0 = +0.4, trained to 500: l = 128: 0.910 +- 0.015 (50 seeds), l = 256:
+    0.909 +- 0.008 (50 seeds), l = 512: 0.922 +- 0.004 (50 seeds)
+  psi0 = +0.4, trained to 1000: l = 128: 0.946 +- 0.011 (50 seeds), l = 256:
+    0.941 +- 0.006 (50 seeds), l = 512: 0.954 +- 0.003 (50 seeds)
+
+laplacian_on_off.png
+  pooled R2 against time of the plain runs trained to t = 500 with the
+    Laplacian output (solid) and without (dashed), log t axis; the mean over
+    the cases both runs have, each case's mean curve read on the union of the
+    time grids (interpolated on log t); dotted line: training horizon t = 500
+  Laplacian on (train_t0500_lap_pred_t10000, 6 cases): pooled R2 at t = 2000:
+    0.981, t = 5000: 0.953, t = 10000: 0.915
+  Laplacian off (train_t0500_pred_t10000, 6 cases): pooled R2 at t = 2000:
+    0.825, t = 5000: 0.460, t = 10000: 0.043
+
+r2_vs_model_size.png
+  pooled R2 at t = 10000 (mean over every seed of every case) against the
+    number of parameters, log axis, for the Laplacian-output runs trained to t
+    = 500 with 24 Fourier modes; the second training seed has its own marker
+    (hollow squares)
+  train_t0500_lap_c16m24_pred_t10000: 3,168,659 parameters, 16 channels,
+    training seed 0, pooled R2 = 0.893
+  train_t0500_lap_c24m24_pred_t10000: 7,110,971 parameters, 24 channels,
+    training seed 0, pooled R2 = 0.889
+  train_t0500_lap_c32m24_pred_t10000: 12,628,067 parameters, 32 channels,
+    training seed 0, pooled R2 = 0.932
+  train_t0500_lap_pred_t10000: 17,799,341 parameters, 38 channels, training
+    seed 0, pooled R2 = 0.917
+  train_t0500_lap_c45m24_pred_t10000: 24,952,067 parameters, 45 channels,
+    training seed 0, pooled R2 = 0.926
+  train_t0500_lap_c64m24_pred_t10000: 50,444,291 parameters, 64 channels,
+    training seed 0, pooled R2 = 0.911
